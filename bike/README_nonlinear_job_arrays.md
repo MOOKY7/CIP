@@ -1,4 +1,4 @@
-# Nonlinear approximate-posterior job-array update
+# Nonlinear approximate posterior job-array update
 
 This directory contains v4 job-array scripts for adding a nonlinear approximate posterior to the synthetic simulation, Diamonds, and Bike Sharing experiments.
 
