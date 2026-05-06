@@ -2,7 +2,7 @@
 
 This directory contains v4 job-array scripts for adding a nonlinear approximate posterior to the synthetic simulation, Diamonds, and Bike Sharing experiments.
 
-The nonlinear posterior is a random-feature last-layer Gibbs posterior.  The raw covariates are mapped to random Fourier features built only from the fitting split, and the Gibbs posterior is Gaussian over the last-layer weights.  The split logic is unchanged: thresholds are chosen on `Dthr`, projection constraints are computed on `Dproj`, and all reported metrics are evaluated on `Dtest`.
+The nonlinear posterior is a random feature last layer Gibbs posterior.  The raw covariates are mapped to random Fourier features built only from the fitting split, and the Gibbs posterior is Gaussian over the last layer weights.  The split logic is unchanged. Thresholds are chosen on `Dthr`, projection constraints are computed on `Dproj`, and all reported metrics are evaluated on `Dtest`.
 
 ## New metrics
 
@@ -31,7 +31,7 @@ SUITE=nonlinear FAST=1 R_NONLINEAR=1 S_POOL=500 N_PARTICLES=100 S_TUNE=100 S_GRO
   MAX_CONCURRENT=4 bash submit_sim_neurips_pipeline_v4_nonlinear.sh
 ```
 
-The nonlinear suite runs a nonlinear-response DGP with a misspecified linear posterior and one or more random-feature posteriors.  The default random-feature dimension is `RF_DIM=128`; if `FAST=0` and `RF_DIM` is not 256, an additional `rff256` setting is included.
+The nonlinear suite runs a nonlinear response DGP with a misspecified linear posterior and one or more random-feature posteriors.  The default random-feature dimension is `RF_DIM=128`; if `FAST=0` and `RF_DIM` is not 256, an additional `rff256` setting is included.
 
 Outputs include:
 
@@ -58,21 +58,21 @@ diamonds_blind_rff256
 diamonds_with_cut_rff256
 ```
 
-You can change the random-feature dimension:
+You can change the random feature dimension:
 
 ```bash
 INCLUDE_NONLINEAR=1 RF_DIM=128 bash submit_diamonds_neurips_pipeline_v4_nonlinear.sh
 ```
 
-## Bike Sharing nonlinear random-feature runs
+## Bike Sharing nonlinear random feature runs
 
-Run the default Bike settings plus nonlinear random-feature settings:
+Run the default Bike settings plus nonlinear random feature settings:
 
 ```bash
 INCLUDE_NONLINEAR=1 NO_K_ABLATION=1 MAX_CONCURRENT=20 bash submit_bike_neurips_pipeline_v4_nonlinear.sh
 ```
 
-By default this runs 4 settings over 20 splits:
+By default, this runs 4 settings over 20 splits:
 
 ```text
 bike_blind
