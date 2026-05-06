@@ -96,7 +96,7 @@ python draw_bike_figures_neurips.py \
 
 ## Optional PNG copies
 
-PDF is the default and is recommended for the paper. To also save PNG copies:
+PDF is the default. To also save PNG copies:
 
 ```bash
 CIP_SAVE_PNG=1 python draw_bike_figures_neurips.py --outdir bike_neurips_array
